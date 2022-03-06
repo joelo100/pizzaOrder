@@ -1,6 +1,5 @@
 package com.joe.pizzaorderservice.security;
 
-import com.joe.pizzaorderservice.resources.OrderResource;
 import io.jsonwebtoken.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,22 +34,28 @@ public class JwtProvider {
                 .compact();
     }
     public String getUserUsernameFromJWT(String token) {
+
         Claims claims = Jwts.parser()
-                .setSigningKey(jwtSecret)
+                .setSigningKey(Base64.getEncoder().encodeToString(jwtSecret.getBytes()))
                 .parseClaimsJws(token)
                 .getBody();
         return claims.getSubject();
     }
     public boolean validateToken(String authToken) {
         try {
+
             Jwts.parser()
-                    .setSigningKey(jwtSecret)
+                    .setSigningKey(Base64.getEncoder().encodeToString(jwtSecret.getBytes()))
                     .parseClaimsJws(authToken);
             return true;
         } catch (MalformedJwtException ex) {
+            logger.error("MalformedJwtException thrown: " + ex);
         } catch (ExpiredJwtException ex) {
+            logger.error("ExpiredJwtException thrown: " + ex);
         } catch (UnsupportedJwtException ex) {
+            logger.error("UnsupportedJwtException thrown: " + ex);
         } catch (IllegalArgumentException ex) {
+            logger.error("IllegalArgumentException thrown: " + ex);
         }
         return false;
     }

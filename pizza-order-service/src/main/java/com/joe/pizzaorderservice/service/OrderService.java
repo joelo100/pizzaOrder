@@ -2,7 +2,6 @@ package com.joe.pizzaorderservice.service;
 
 import com.joe.pizzaorderservice.models.PizzaOrder;
 import com.joe.pizzaorderservice.repository.PizzaOrderRepository;
-import com.joe.pizzaorderservice.resources.OrderResource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
