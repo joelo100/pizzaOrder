@@ -1,6 +1,6 @@
 package com.joe.pizzamessagegeneratorservice;
 
-import com.joe.pizzamessagegeneratorservice.resources.PizzaResource;
+import com.joe.pizzamessagegeneratorservice.resources.PizzaController;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(value = PizzaResource.class)
+@WebMvcTest(value = PizzaController.class)
 class PizzaMessageGeneratorServiceApplicationTests {
 
 	@Autowired

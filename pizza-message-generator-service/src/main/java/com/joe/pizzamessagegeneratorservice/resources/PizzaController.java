@@ -12,9 +12,9 @@ import java.util.Random;
 
 @RestController
 @RequestMapping("/pizzaMessage")
-public class PizzaResource {
+public class PizzaController {
 
-    Logger logger = LogManager.getLogger(PizzaResource.class);
+    Logger logger = LogManager.getLogger(PizzaController.class);
 
     @RequestMapping("/pizza")
     public PizzaMessage getPizzaOrder() {
