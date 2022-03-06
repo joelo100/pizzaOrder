@@ -28,7 +28,8 @@ Once the two projects are running,
 1) pizza-message-generator-service
 
 Type this in Chrome browser
-http://localhost:8081/pizzaMessage/pizza
+> http://localhost:8081/pizzaMessage/pizza
+
 A message like this one will return in response 
 {"name":"hawaiian","quantity":1,"price":16.0} 
  
