@@ -14,9 +14,11 @@ How to run project
 In Intellij project view, 
 
 1) pizza-message-generator-service
+
 Run class PizzaMessageGeneratorServiceApplication, this will be running on port 8081
 
 2) pizza-order-service
+
 Run class PizzaOrderServiceApplication, this will be running on port 8082
 
 How to test
