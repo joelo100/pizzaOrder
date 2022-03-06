@@ -36,12 +36,14 @@ A message like this one will return in response
 Test with "curl" command 
 
 a) Run this this generate JWT token 
-curl -X POST http://localhost:8082/auth/signin -H 'Content-Type: application/json' -d '{"username":"joe","password":"joe"}'
+> curl -X POST http://localhost:8082/auth/signin -H 'Content-Type: application/json' -d '{"username":"joe","password":"joe"}'
+
 This will be generated: 
+
 {"token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2UiLCJpYXQiOjE2NDY1NjE5NzUsImV4cCI6MTY0NjU3OTk3NX0.JP6V71KgLa03DU1j-QfxyAjN3cNAMJvs5yL9t-RuXemkfWyL6VvoKultDFXcRGLjyUzuidsAzarjaXv5DVpb4g"}
 
 b) Run 2nd rest service with valid JWT token 
-curl -X GET http://localhost:8082/pizzaOrder/orderSubmit -H 'Content-Type: application/json' -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2UiLCJpYXQiOjE2NDY1NjI1OTQsImV4cCI6MTY0NjU4MDU5NH0.Tx7Y9dBa9Bxv0q1fE8uJUZugLQLlMJXaXW4uPyfJRxfq-OZsEa8vW-R3HFU1HKgRWynTXwORTScqmc1k2CvEzQ'
+> curl -X GET http://localhost:8082/pizzaOrder/orderSubmit -H 'Content-Type: application/json' -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2UiLCJpYXQiOjE2NDY1NjI1OTQsImV4cCI6MTY0NjU4MDU5NH0.Tx7Y9dBa9Bxv0q1fE8uJUZugLQLlMJXaXW4uPyfJRxfq-OZsEa8vW-R3HFU1HKgRWynTXwORTScqmc1k2CvEzQ'
 
 With invalid token, this {"timestamp":"2022-03-06T10:35:00.018+00:00","status":401,"error":"Unauthorized","path":"/pizzaOrder/orderSubmit"} will be returned
 
